@@ -409,6 +409,16 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
   .grid { grid-template-columns: 1fr; gap: 56px; }
   .hero-side { justify-items: start; text-align: left; }
 }
+/* first screen: keep intro + CTA visible */
+@media (max-width: 820px) {
+  .r3, .r4 { display: none; }
+  .lanyard-wrap { height: 600px; transform: scale(.72); transform-origin: 50% 0; margin-bottom: -168px; }
+  .hero-foot { margin-top: 0; }
+}
+@media (min-width: 821px) and (max-height: 820px) {
+  .lanyard-wrap { transform: scale(.82); transform-origin: 50% 0; margin-bottom: -103px; }
+  .stage { min-height: 0; }
+}
 @media (max-width: 480px) { .pbr { grid-template-columns: 1fr; gap: 2px; } .pbr dd { margin-bottom: 8px; } }
 
 /* ---------- v4: JobPilot, certifications ---------- */
@@ -449,8 +459,8 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
   <!-- HERO: the swinging ID badge -->
   <section class="hero wrap" aria-label="Introduction">
     <div class="stage">
-      <span class="role r1">ENGINEER</span>
-      <span class="role r2">DEVELOPER</span>
+      <span class="role r1">FULL-STACK</span>
+      <span class="role r2">BACKEND</span>
 
       <div class="lanyard-wrap">
         <div class="pendulum" id="pendulum">
@@ -477,21 +487,21 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
         <div class="hint">drag the badge ↔</div>
       </div>
 
-      <span class="role r3">BUILDER</span>
-      <span class="role r4">TESTER</span>
+      <span class="role r3">APIs</span>
+      <span class="role r4">TESTING</span>
     </div>
 
     <div class="hero-foot">
       <div class="hero-intro">
         <h1>Hi, I'm Saniya. <em>Software engineer in Toronto.</em></h1>
-        <p class="typed" id="typed" aria-live="off">Building practical software through thoughtful engineering</p>
+        <p class="typed" id="typed" aria-live="off">I build web apps, backend APIs, and integrations.</p>
       </div>
       <div class="hero-side">
         <div class="hero-btns">
           <a class="btn btn-light" href="#work">View projects ↓</a>
           <a class="btn btn-outline" href="resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
         </div>
-        <span class="status"><i></i>Open to software engineering roles</span>
+        <span class="status"><i></i>Open to junior full-stack &amp; backend roles in Toronto</span>
       </div>
     </div>
   </section>
@@ -519,7 +529,7 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
             <dt>Result</dt><dd>A live app with Google sign-in for approved staff, tested end to end.</dd>
           </dl>
           <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Make.com</span></div>
-          <div class="card-links"><a href="https://guelph-solar-ai.vercel.app/" target="_blank" rel="noopener">Live site ↗</a></div>
+          <div class="card-links"><a href="https://guelph-solar-ai.vercel.app/" target="_blank" rel="noopener" title="Approved staff sign in with Google">Live site (staff login) ↗</a></div>
         </article>
 
         <article class="proj">
@@ -588,7 +598,7 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
           <div class="wide-copy">
             <span class="building"><i></i>Currently building</span>
             <div class="proj-head"><h3>JobPilot</h3><span class="year">In progress</span></div>
-            <span class="role-line">AI job search assistant · C# / .NET</span>
+            <span class="role-line">Job application tracker API · C# / .NET · AI matching planned</span>
             <dl class="pbr">
               <dt>Problem</dt><dd>Job hunting means keeping track of many applications, stages, and follow-ups.</dd>
               <dt>Building</dt><dd>A REST API to track job applications with ASP.NET Core, Entity Framework Core, and SQLite.</dd>
@@ -608,7 +618,7 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
         <div class="about-copy">
           <h2 class="h2" id="about-h">About me</h2>
           <span class="pill">✦ Software Engineer · Toronto, ON</span>
-          <p>I'm <strong>Saniyabanu Ansari</strong>, a Software Engineering Technician graduate based in Toronto. I've built web applications, backend services, database-driven systems, and third-party integrations through my internship and academic projects.</p>
+          <p>I'm <strong>Saniyabanu Ansari</strong>, a Software Engineering Technician graduate based in Toronto. I've built web applications, backend services, database-driven systems, and third-party integrations through my work at Guelph Solar and my academic projects.</p>
           <p>I enjoy solving practical problems, learning new technologies, and building applications that are useful, reliable, and easy to use.</p>
           <ul class="focus">
             <li>Full-stack apps with React, Next.js, TypeScript, Node.js, and C#/.NET</li>
@@ -685,25 +695,20 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
         <div class="skill-group"><h3>Languages</h3><ul><li>Java</li><li>C#</li><li>Python</li><li>JavaScript</li><li>TypeScript</li><li>SQL</li><li>PL/SQL</li></ul></div>
         <div class="skill-group"><h3>Frontend</h3><ul><li>React</li><li>Next.js</li><li>HTML5</li><li>CSS3</li><li>Vite</li><li>Tailwind CSS</li></ul></div>
         <div class="skill-group"><h3>Backend</h3><ul><li>Node.js</li><li>Express.js</li><li>REST APIs</li><li>.NET</li><li>Entity Framework Core</li></ul></div>
-        <div class="skill-group"><h3>Databases</h3><ul><li>MongoDB</li><li>MongoDB Atlas</li><li>Mongoose</li><li>PostgreSQL</li><li>Oracle SQL</li><li>Database design</li><li>Normalization</li></ul></div>
+        <div class="skill-group"><h3>Databases</h3><ul><li>MongoDB</li><li>PostgreSQL</li><li>Oracle SQL</li></ul></div>
         <div class="skill-group"><h3>AI integration</h3><ul><li>LLM APIs</li><li>RAG</li><li>Text embeddings</li><li>Semantic search</li></ul></div>
-        <div class="skill-group"><h3>Testing</h3><ul><li>Unit testing</li><li>Python unittest</li><li>API testing</li><li>Postman</li><li>Manual testing</li><li>Debugging</li></ul></div>
-        <div class="skill-group span2"><h3>Tools &amp; practices</h3><ul><li>Git &amp; GitHub</li><li>VS Code</li><li>Visual Studio</li><li>Oracle SQL Developer</li><li>Make.com</li><li>Agile</li><li>SDLC</li><li>OOP</li><li>UML</li><li>Software design</li><li>Requirements analysis</li></ul></div>
+        <div class="skill-group"><h3>Testing</h3><ul><li>Unit testing</li><li>Python unittest</li><li>API testing</li><li>Postman</li></ul></div>
+        <div class="skill-group span2"><h3>Tools &amp; practices</h3><ul><li>Git &amp; GitHub</li><li>Make.com</li><li>Agile</li><li>OOP</li></ul></div>
       </div>
     </div>
 
-    <div class="toolbox" aria-hidden="true">
-      <div class="marquee" id="marquee">
-        <span>TypeScript</span><span>React</span><span>Next.js</span><span>Node.js</span><span>PostgreSQL</span><span>MongoDB</span><span>Python</span><span>Java</span><span>C#</span><span>.NET</span><span>Make.com</span>
-      </div>
-    </div>
   </section>
 
   <!-- CONTACT -->
   <section class="band-blush" id="contact" aria-labelledby="contact-h">
     <div class="wrap contact">
       <p class="eyebrow">Contact</p>
-      <h2 class="h2 blur-in" id="contact-h">Got an idea?<br>Let's build it.</h2>
+      <h2 class="h2 blur-in" id="contact-h">Hiring a junior developer?<br>Let's talk.</h2>
       <div class="actions">
         <a class="btn btn-dark" href="https://www.linkedin.com/in/saniiya-ansari/" target="_blank" rel="noopener">Message me on LinkedIn ↗</a>
         <a class="btn btn-ghost" href="https://github.com/Saniya513" target="_blank" rel="noopener">GitHub ↗</a>
@@ -770,7 +775,7 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
 
   /* ---- typewriter ---- */
   const typed = document.getElementById('typed');
-  const lines = ['Building practical software through thoughtful engineering', 'Next.js · Node.js · C#/.NET · PostgreSQL', '31 tests, 0 failures. I like proving things work.'];
+  const lines = ['I build web apps, backend APIs, and integrations.', 'Most recently: co-built a live AI sales assistant at Guelph Solar.', 'Next.js · Node.js · C#/.NET · PostgreSQL', '31 tests, 0 failures. I like proving things work.'];
   if (!reduce) {
     let li = 0, ci = lines[0].length, deleting = true;
     setTimeout(function tick() {
@@ -784,10 +789,6 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
 
   /* ---- project rail ---- */
 
-  /* ---- skills marquee: duplicate for a seamless loop ---- */
-  const mq = document.getElementById('marquee');
-  mq.innerHTML += mq.innerHTML;
-  mq.querySelectorAll('span').forEach((s, i) => { if (i >= mq.children.length / 2) s.setAttribute('aria-hidden', 'true'); });
 
   /* ---- copy email ---- */
   const msg = document.getElementById('copy-msg');

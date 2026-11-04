@@ -409,6 +409,43 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
   .grid { grid-template-columns: 1fr; gap: 56px; }
   .hero-side { justify-items: start; text-align: left; }
 }
+/* planned card */
+.frame.plan { padding-bottom: 8px; }
+.plan-list { list-style: none; margin: 0; padding: 18px 20px; display: grid; gap: 12px; font-size: 15px; color: var(--ink); }
+.plan-list li { padding-left: 26px; position: relative; }
+.plan-list li::before { content: ""; position: absolute; left: 0; top: 3px; width: 14px; height: 14px; border-radius: 4px; box-shadow: inset 0 0 0 1.5px var(--orchid); }
+/* how I built it */
+.how { margin-top: 72px; padding: 32px; border-radius: 24px; background: var(--paper); box-shadow: 0 18px 40px rgb(60 20 80 / .12); }
+.how-h { font-family: var(--display); font-weight: 800; font-size: clamp(26px, 3.4vw, 36px); line-height: 1.1; margin-top: 10px; }
+.how-lede { max-width: 62ch; color: var(--muted-ink); margin: 12px 0 0; }
+.flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; margin-top: 28px; }
+.node { position: relative; padding: 16px; border-radius: 16px; background: var(--blush); }
+.node.ai { background: var(--plum); color: var(--paper); }
+.node.ai p { color: var(--mist); }
+.node h4 { font-family: var(--display); font-weight: 700; font-size: 17px; margin: 8px 0 6px; }
+.node p { margin: 0; font-size: 14px; color: var(--muted-ink); }
+.node .step { font: 600 11px/1 var(--mono); color: var(--orchid); }
+.node.ai .step { color: var(--blush-2); }
+.node:not(:last-child)::after { content: "→"; position: absolute; right: -22px; top: 50%; transform: translateY(-50%); font: 600 18px/1 var(--mono); color: var(--orchid); }
+.sync { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 20px; padding: 14px 16px; border-radius: 14px; box-shadow: inset 0 0 0 1.5px var(--blush-2); }
+.sync-label { font: 600 12px/1.3 var(--mono); color: var(--muted-ink); margin-right: 4px; }
+.chip { font: 600 12px/1 var(--mono); padding: 7px 11px; border-radius: 999px; background: var(--ink); color: var(--paper); }
+.gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+.gallery figure { margin: 0; }
+.gallery img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; border-radius: 12px; box-shadow: 0 8px 20px rgb(60 20 80 / .15); }
+.gallery figcaption { font: 400 12px/1.4 var(--mono); color: var(--muted-ink); margin-top: 8px; }
+@media (max-width: 820px) {
+  .how { padding: 22px; }
+  .flow { grid-template-columns: 1fr; gap: 26px; }
+  .node:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -22px; transform: translateX(-50%); }
+  .gallery { grid-template-columns: 1fr; }
+}
+/* top skills */
+.top-skills { margin-top: 64px; }
+.top-skills h3 { font: 600 12px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--blush-2); margin-bottom: 14px; }
+.top-skills ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.top-skills li { font-family: var(--display); font-weight: 700; font-size: 18px; padding: 10px 18px; border-radius: 999px; background: var(--blush); color: var(--ink); }
+.top-skills + .skills { margin-top: 24px; }
 /* first screen: keep intro + CTA visible */
 @media (max-width: 820px) {
   .r3, .r4 { display: none; }
@@ -518,18 +555,18 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
       <div class="grid">
         <article class="proj">
           <figure class="frame">
-            <div class="frame-bar"><i></i><i></i><i></i><span>guelph-solar-ai.vercel.app</span></div>
-            <img src="shots/guelph-solar.jpg" alt="Guelph Solar AI Sales Assistant sign-in screen with Continue with Google" loading="lazy">
+            <div class="frame-bar"><i></i><i></i><i></i><span>Conversation review · Gemini analysis</span></div>
+            <img src="shots/gs-review.jpg" alt="Guelph Solar AI Sales Assistant conversation review: call transcript with AI evidence highlights beside a Gemini-generated overview with conversation quality, customer readiness, and a narrative summary" loading="lazy">
           </figure>
           <div class="proj-head"><h3>Guelph Solar AI Sales Assistant</h3><span class="year">Jul – Sep 2026</span></div>
           <span class="role-line">Artificial Intelligence Engineer · 2-person team</span>
           <dl class="pbr">
-            <dt>Problem</dt><dd>The sales team needed customer conversations, meetings, and files in one workspace.</dd>
-            <dt>Built</dt><dd>Frontend in Next.js, React, and TypeScript; backend APIs in Node.js, Express, and PostgreSQL; Make.com workflows to HubSpot, Google Meet, and Dropbox.</dd>
-            <dt>Result</dt><dd>A live app with Google sign-in for approved staff, tested end to end.</dd>
+            <dt>Problem</dt><dd>Sales calls had to be transcribed, summarized, followed up, and logged by hand, with customer conversations, meetings, and files spread across tools.</dd>
+            <dt>Built</dt><dd>A Next.js app where reps review Gemini 2.5 Flash analysis of each call next to the transcript, backed by Express and PostgreSQL APIs and Make.com workflows to HubSpot, Google Meet, and Dropbox.</dd>
+            <dt>Result</dt><dd>A live app for approved staff, where every AI summary is reviewed by a person before it becomes customer history.</dd>
           </dl>
-          <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Make.com</span></div>
-          <div class="card-links"><a href="https://guelph-solar-ai.vercel.app/" target="_blank" rel="noopener" title="Approved staff sign in with Google">Live site (staff login) ↗</a></div>
+          <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Gemini 2.5 Flash</span><span>Make.com</span></div>
+          <div class="card-links"><a href="#how-gs">How I built it ↓</a><a href="https://guelph-solar-ai.vercel.app/" target="_blank" rel="noopener" title="Approved staff sign in with Google">Live site (staff login) ↗</a></div>
         </article>
 
         <article class="proj">
@@ -554,17 +591,16 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
             <img style="object-position:left top" src="shots/campusrent.jpg" alt="CampusRent home page: Rent what you need. Share what you have." loading="lazy">
           </figure>
           <div class="proj-head"><h3>CampusRent</h3><span class="year">Team project</span></div>
-          <span class="role-line">Frontend · backend · database · Agile team</span>
+          <span class="role-line">5-person Agile team · frontend · backend · database</span>
           <dl class="pbr">
             <dt>Problem</dt><dd>Students need a safe way to borrow textbooks, electronics, and lab equipment from each other.</dd>
-            <dt>Built</dt><dd>Frontend, backend, and database features, including availability control in the listing-editing workflow.</dd>
+            <dt>Built</dt><dd>Features across the stack: listings and availability, search and filters, rental requests, messaging, reviews, reporting, and admin verification and moderation.</dd>
             <dt>Result</dt><dd>A live platform with verified sign-up, search, rental requests, messaging, reviews, and admin moderation.</dd>
           </dl>
-          <div class="tags"><span>React 18</span><span>TypeScript</span><span>Express</span><span>MongoDB Atlas</span><span>JWT</span></div>
+          <div class="tags"><span>React 18</span><span>TypeScript</span><span>Vite</span><span>Tailwind</span><span>Node.js</span><span>Express</span><span>MongoDB Atlas</span><span>JWT</span></div>
           <div class="card-links">
             <a href="https://campusrent-app.vercel.app" target="_blank" rel="noopener">Live site ↗</a>
             <a href="https://github.com/COMP231-Group1-CampusRent/CampusRent" target="_blank" rel="noopener">GitHub ↗</a>
-            <a href="https://github.com/COMP231-Group1-CampusRent/CampusRent/commit/e0d57cbecd36a468b9f072875baee7e4e67a26e3" target="_blank" rel="noopener">My commit ↗</a>
           </div>
         </article>
 
@@ -577,36 +613,54 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
           <span class="role-line">Oracle SQL · database design</span>
           <dl class="pbr">
             <dt>Problem</dt><dd>An online store has to keep clients, products, orders, and inventory consistent.</dd>
-            <dt>Built</dt><dd>A normalized Oracle SQL schema and the SQL operations behind order and inventory workflows.</dd>
-            <dt>Result</dt><dd>A working app with Clients, Products, Orders, and Stock screens on top of the database.</dd>
+            <dt>Built</dt><dd>A normalized Oracle SQL schema, the SQL operations behind order and inventory workflows, and a web app on top of it.</dd>
+            <dt>Result</dt><dd>A working site with Clients, Products, Orders, and Stock screens backed by the database.</dd>
           </dl>
           <div class="tags"><span>Oracle SQL</span><span>Database design</span><span>Normalization</span></div>
           <div class="card-links"><span class="note">Academic project · no public repository</span></div>
         </article>
-              <article class="proj wide">
-          <figure class="frame">
-            <div class="frame-bar"><i></i><i></i><i></i><span>localhost:5001/api/applications</span></div>
-            <div class="s-api" aria-hidden="true">
-              <div class="row"><span class="m">GET</span>/api/applications<span class="ms">200 OK</span></div>
-              <div class="row"><span class="m post">POST</span>/api/applications<span class="ms">201 Created</span></div>
-              <div class="row"><span class="m put">PUT</span>/api/applications/{id}<span class="ms">204</span></div>
-              <div class="row"><span class="m del">DELETE</span>/api/applications/{id}<span class="ms">204</span></div>
-              <pre class="json">{ "company": "Example Co", "role": "Junior Developer",
-  "status": "Applied", "appliedOn": "2026-11-01" }</pre>
-            </div>
+        <article class="proj wide">
+          <figure class="frame plan">
+            <div class="frame-bar"><i></i><i></i><i></i><span>JobPilot · planned features</span></div>
+            <ul class="plan-list">
+              <li>Track applications, stages, and follow-ups through a REST API</li>
+              <li>Store applications with Entity Framework Core and SQLite</li>
+              <li>AI features to match a resume against job postings</li>
+            </ul>
           </figure>
           <div class="wide-copy">
-            <span class="building"><i></i>Currently building</span>
-            <div class="proj-head"><h3>JobPilot</h3><span class="year">In progress</span></div>
-            <span class="role-line">Job application tracker API · C# / .NET · AI matching planned</span>
+            <span class="building"><i></i>Up next</span>
+            <div class="proj-head"><h3>JobPilot</h3><span class="year">Planned</span></div>
+            <span class="role-line">AI job search assistant · C# / .NET</span>
             <dl class="pbr">
               <dt>Problem</dt><dd>Job hunting means keeping track of many applications, stages, and follow-ups.</dd>
-              <dt>Building</dt><dd>A REST API to track job applications with ASP.NET Core, Entity Framework Core, and SQLite.</dd>
+              <dt>Plan</dt><dd>An ASP.NET Core app for tracking applications, with AI features for matching. Not started yet; this card will link the repo once it is public.</dd>
             </dl>
-            <div class="tags"><span>C#</span><span>ASP.NET Core</span><span>EF Core</span><span>SQLite</span><span>REST API</span></div>
+            <div class="tags"><span>C#</span><span>ASP.NET Core</span><span>EF Core</span><span>SQLite</span></div>
           </div>
         </article>
       </div>
+
+      <section class="how" id="how-gs" aria-labelledby="how-gs-h">
+        <p class="eyebrow">How I built it</p>
+        <h3 class="how-h" id="how-gs-h">Guelph Solar AI Sales Assistant</h3>
+        <p class="how-lede">Built in a 2-person team during my internship. A call comes in, Gemini analyses it, a sales rep reviews it, and Make.com keeps the rest of the sales tools in sync.</p>
+        <div class="flow" role="list" aria-label="How a sales call moves through the system">
+          <div class="node" role="listitem"><span class="step">1</span><h4>Call comes in</h4><p>Phone recording or Google Meet transcript, linked to a customer record.</p></div>
+          <div class="node" role="listitem"><span class="step">2</span><h4>Express API</h4><p>Node.js and Express endpoints save customers, conversations, and transcripts in PostgreSQL.</p></div>
+          <div class="node ai" role="listitem"><span class="step">3</span><h4>Gemini 2.5 Flash</h4><p>Summarises the call and marks the transcript lines it used as evidence.</p></div>
+          <div class="node" role="listitem"><span class="step">4</span><h4>Rep reviews</h4><p>Next.js screens show the analysis beside the transcript; the rep edits and approves it.</p></div>
+        </div>
+        <div class="sync">
+          <span class="sync-label">Make.com workflows connect the app to</span>
+          <span class="chip">HubSpot</span><span class="chip">Google Meet</span><span class="chip">Dropbox</span>
+        </div>
+        <div class="gallery">
+          <figure><a href="shots/gs-dashboard.jpg" target="_blank" rel="noopener"><img src="shots/gs-dashboard.jpg" alt="Home dashboard with calls needing review, open action items, today's priorities, and a weekly coaching insight" loading="lazy"></a><figcaption>Home dashboard: what needs review today</figcaption></figure>
+          <figure><a href="shots/gs-review.jpg" target="_blank" rel="noopener"><img src="shots/gs-review.jpg" alt="Conversation review with transcript, AI evidence highlights, and Gemini-generated summary" loading="lazy"></a><figcaption>Conversation review with AI evidence</figcaption></figure>
+          <figure><a href="shots/gs-quality.jpg" target="_blank" rel="noopener"><img src="shots/gs-quality.jpg" alt="Conversation quality tab with talk-to-listen ratio, response latency, and interruptions" loading="lazy"></a><figcaption>Conversation quality: talk-to-listen ratio, latency</figcaption></figure>
+        </div>
+      </section>
     </div>
   </section>
 
@@ -618,7 +672,7 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
         <div class="about-copy">
           <h2 class="h2" id="about-h">About me</h2>
           <span class="pill">✦ Software Engineer · Toronto, ON</span>
-          <p>I'm <strong>Saniyabanu Ansari</strong>, a Software Engineering Technician graduate based in Toronto. I've built web applications, backend services, database-driven systems, and third-party integrations through my work at Guelph Solar and my academic projects.</p>
+          <p>I'm <strong>Saniyabanu Ansari</strong>, a Software Engineering Technician graduate based in Toronto. I've built web applications, backend services, database-driven systems, and third-party integrations through my internship at Guelph Solar and my academic projects.</p>
           <p>I enjoy solving practical problems, learning new technologies, and building applications that are useful, reliable, and easy to use.</p>
           <ul class="focus">
             <li>Full-stack apps with React, Next.js, TypeScript, Node.js, and C#/.NET</li>
@@ -686,11 +740,15 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
           <div class="cert">
             <span class="cert-org">Microsoft Applied Skills</span>
             <span class="cert-name">Develop a Generative AI Chat App Using the Microsoft Foundry SDK</span>
-            <span class="cert-status">In progress</span>
+            <span class="cert-status">In progress · expected Nov 2026</span>
           </div>
         </div>
       </div>
 
+      <div class="top-skills" aria-label="Top skills">
+        <h3>Top skills</h3>
+        <ul><li>TypeScript</li><li>React</li><li>Next.js</li><li>Node.js</li><li>PostgreSQL</li><li>C# / .NET</li></ul>
+      </div>
       <div class="skills" aria-label="Technical skills">
         <div class="skill-group"><h3>Languages</h3><ul><li>Java</li><li>C#</li><li>Python</li><li>JavaScript</li><li>TypeScript</li><li>SQL</li><li>PL/SQL</li></ul></div>
         <div class="skill-group"><h3>Frontend</h3><ul><li>React</li><li>Next.js</li><li>HTML5</li><li>CSS3</li><li>Vite</li><li>Tailwind CSS</li></ul></div>

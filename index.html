@@ -429,6 +429,7 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
 .node:not(:last-child)::after { content: "→"; position: absolute; right: -22px; top: 50%; transform: translateY(-50%); font: 600 18px/1 var(--mono); color: var(--orchid); }
 .sync { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 20px; padding: 14px 16px; border-radius: 14px; box-shadow: inset 0 0 0 1.5px var(--blush-2); }
 .sync-label { font: 600 12px/1.3 var(--mono); color: var(--muted-ink); margin-right: 4px; }
+.sync.also { margin-top: 10px; }
 .chip { font: 600 12px/1 var(--mono); padding: 7px 11px; border-radius: 999px; background: var(--ink); color: var(--paper); }
 .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
 .gallery figure { margin: 0; }
@@ -559,7 +560,7 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
             <img src="shots/gs-review.jpg" alt="Guelph Solar AI Sales Assistant conversation review: call transcript with AI evidence highlights beside a Gemini-generated overview with conversation quality, customer readiness, and a narrative summary" loading="lazy">
           </figure>
           <div class="proj-head"><h3>Guelph Solar AI Sales Assistant</h3><span class="year">Jul – Sep 2026</span></div>
-          <span class="role-line">Artificial Intelligence Engineer · 2-person team</span>
+          <span class="role-line">AI Software Developer Intern · 2-person team</span>
           <dl class="pbr">
             <dt>Problem</dt><dd>Sales calls had to be transcribed, summarized, followed up, and logged by hand, with customer conversations, meetings, and files spread across tools.</dd>
             <dt>Built</dt><dd>A Next.js app where reps review Gemini 2.5 Flash analysis of each call next to the transcript, backed by Express and PostgreSQL APIs and Make.com workflows to HubSpot, Google Meet, and Dropbox.</dd>
@@ -655,6 +656,10 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
           <span class="sync-label">Make.com workflows connect the app to</span>
           <span class="chip">HubSpot</span><span class="chip">Google Meet</span><span class="chip">Dropbox</span>
         </div>
+        <div class="sync also">
+          <span class="sync-label">Also built</span>
+          <span class="chip">Coaching &amp; call-quality metrics</span><span class="chip">Follow-up emails</span><span class="chip">AI proposal generation</span><span class="chip">Timesheets</span><span class="chip">Installer onboarding assistant</span>
+        </div>
         <div class="gallery">
           <figure><a href="shots/gs-dashboard.jpg" target="_blank" rel="noopener"><img src="shots/gs-dashboard.jpg" alt="Home dashboard with calls needing review, open action items, today's priorities, and a weekly coaching insight" loading="lazy"></a><figcaption>Home dashboard: what needs review today</figcaption></figure>
           <figure><a href="shots/gs-review.jpg" target="_blank" rel="noopener"><img src="shots/gs-review.jpg" alt="Conversation review with transcript, AI evidence highlights, and Gemini-generated summary" loading="lazy"></a><figcaption>Conversation review with AI evidence</figcaption></figure>
@@ -692,16 +697,17 @@ footer.fine { display: flex; justify-content: space-between; flex-wrap: wrap; ga
         <div class="tl-row reveal">
           <span class="tl-when">Jul – Sep 2026</span>
           <div>
-            <h3>Artificial Intelligence Engineer · <a href="https://guelph-solar-ai.vercel.app/" target="_blank" rel="noopener">Guelph Solar</a></h3>
+            <h3>AI Software Developer Intern · <a href="https://guelph-solar-ai.vercel.app/" target="_blank" rel="noopener">Guelph Solar</a></h3>
             <ul class="tl-sub">
-              <li>Co-developed an AI-powered sales assistant in a 2-person team</li>
-              <li>Built frontend components in Next.js, React, and TypeScript</li>
-              <li>Built backend APIs with Node.js, Express, and PostgreSQL</li>
-              <li>Built Make.com workflows connecting HubSpot, Google Meet, and Dropbox</li>
-              <li>Tested the app and troubleshot integrations end to end</li>
+              <li>Co-developed an AI sales assistant in a 2-person team that turns sales calls into reviewable summaries and follow-ups</li>
+              <li>Integrated Gemini 2.5 Flash to summarize calls with linked transcript evidence and a human approval step</li>
+              <li>Engineered Node.js/Express REST APIs and a PostgreSQL schema for customers, conversations, transcripts, and tasks</li>
+              <li>Designed Next.js/React/TypeScript screens for call review, call-quality metrics, coaching, and follow-up emails</li>
+              <li>Automated Make.com workflows connecting the app to HubSpot, Google Meet, and Dropbox</li>
+              <li>Built AI proposal generation, timesheet administration, and an onboarding assistant for installers</li>
             </ul>
           </div>
-          <span class="tl-kind">Work</span>
+          <span class="tl-kind">Internship</span>
         </div>
         <div class="tl-row reveal">
           <span class="tl-when">Aug 2026</span>
